@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MCQDAOnAbp.Gateway.props" />
+</Project>

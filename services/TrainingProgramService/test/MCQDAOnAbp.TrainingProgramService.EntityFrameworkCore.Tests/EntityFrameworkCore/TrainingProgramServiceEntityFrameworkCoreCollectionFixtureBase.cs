@@ -1,0 +1,9 @@
+﻿using MCQDAOnAbp.TrainingProgramService.EntityFrameworkCore;
+using Xunit;
+
+namespace MCQDAOnAbp.TrainingProgramService.EntityFrameworkCore;
+
+public class TrainingProgramServiceEntityFrameworkCoreCollectionFixtureBase : ICollectionFixture<TrainingProgramServiceEntityFrameworkCoreFixture>
+{
+
+}

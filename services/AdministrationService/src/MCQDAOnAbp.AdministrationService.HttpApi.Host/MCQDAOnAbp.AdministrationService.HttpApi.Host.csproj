@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MCQDAOnAbp.AdministrationService</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>MCQDAOnAbp.AdministrationService-4681b4fd-151f-4221-84a4-929d86723e4c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.ServiceDefaults\MCQDAOnAbp.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.Shared.Hosting.Microservices\MCQDAOnAbp.Shared.Hosting.Microservices.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.AdministrationService.Application\MCQDAOnAbp.AdministrationService.Application.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.AdministrationService.EntityFrameworkCore\MCQDAOnAbp.AdministrationService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.AdministrationService.HttpApi\MCQDAOnAbp.AdministrationService.HttpApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="8.3.3" />
+  </ItemGroup>
+
+</Project>

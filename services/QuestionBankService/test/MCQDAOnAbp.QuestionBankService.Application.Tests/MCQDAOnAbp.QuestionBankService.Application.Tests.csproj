@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MCQDAOnAbp.QuestionBankService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MCQDAOnAbp.QuestionBankService.Application\MCQDAOnAbp.QuestionBankService.Application.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.QuestionBankService.Domain.Tests\MCQDAOnAbp.QuestionBankService.Domain.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MCQDAOnAbp.ExamResultService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MCQDAOnAbp.ExamResultService.Domain\MCQDAOnAbp.ExamResultService.Domain.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.ExamResultService.TestBase\MCQDAOnAbp.ExamResultService.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

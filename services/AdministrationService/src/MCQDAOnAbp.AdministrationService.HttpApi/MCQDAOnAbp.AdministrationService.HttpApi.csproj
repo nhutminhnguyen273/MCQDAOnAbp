@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MCQDAOnAbp.AdministrationService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MCQDAOnAbp.AdministrationService.Application.Contracts\MCQDAOnAbp.AdministrationService.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="8.3.3" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="8.3.3" />
+  </ItemGroup>
+
+</Project>

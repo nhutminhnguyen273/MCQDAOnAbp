@@ -1,0 +1,13 @@
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\bin\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.deps.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\bin\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\bin\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.csproj.AssemblyReference.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.GeneratedMSBuildEditorConfig.editorconfig
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.AssemblyInfoInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.AssemblyInfo.cs
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.csproj.CoreCompileInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.sourcelink.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\refint\MCQDAOnAbp.Shared.Hosting.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Hosting\obj\Debug\net8.0\ref\MCQDAOnAbp.Shared.Hosting.dll

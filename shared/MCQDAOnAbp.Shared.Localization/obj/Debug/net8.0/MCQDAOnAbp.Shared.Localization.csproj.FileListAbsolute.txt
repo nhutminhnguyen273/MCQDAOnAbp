@@ -1,0 +1,13 @@
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\bin\Debug\net8.0\MCQDAOnAbp.Shared.Localization.deps.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\bin\Debug\net8.0\MCQDAOnAbp.Shared.Localization.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\bin\Debug\net8.0\MCQDAOnAbp.Shared.Localization.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.csproj.AssemblyReference.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.GeneratedMSBuildEditorConfig.editorconfig
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.AssemblyInfoInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.AssemblyInfo.cs
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.csproj.CoreCompileInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.sourcelink.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\refint\MCQDAOnAbp.Shared.Localization.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\MCQDAOnAbp.Shared.Localization.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Shared.Localization\obj\Debug\net8.0\ref\MCQDAOnAbp.Shared.Localization.dll

@@ -1,0 +1,13 @@
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\bin\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.deps.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\bin\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\bin\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.csproj.AssemblyReference.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.AssemblyInfoInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.AssemblyInfo.cs
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.csproj.CoreCompileInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.sourcelink.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\refint\MCQDAOnAbp.ServiceDefaults.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\MCQDAOnAbp.ServiceDefaults.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.ServiceDefaults\obj\Debug\net8.0\ref\MCQDAOnAbp.ServiceDefaults.dll

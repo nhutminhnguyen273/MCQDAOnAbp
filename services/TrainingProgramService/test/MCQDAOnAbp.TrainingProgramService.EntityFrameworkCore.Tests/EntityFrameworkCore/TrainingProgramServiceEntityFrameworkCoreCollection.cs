@@ -1,0 +1,9 @@
+﻿using Xunit;
+
+namespace MCQDAOnAbp.TrainingProgramService.EntityFrameworkCore;
+
+[CollectionDefinition(TrainingProgramServiceTestConsts.CollectionDefinitionName)]
+public class TrainingProgramServiceEntityFrameworkCoreCollection : ICollectionFixture<TrainingProgramServiceEntityFrameworkCoreFixture>
+{
+
+}

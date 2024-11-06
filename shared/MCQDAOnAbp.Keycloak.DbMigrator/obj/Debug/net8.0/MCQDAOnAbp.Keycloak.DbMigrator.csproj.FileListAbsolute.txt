@@ -1,0 +1,16 @@
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\bin\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.deps.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\bin\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\bin\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\bin\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\bin\Debug\net8.0\MCQDAOnAbp.Shared.Hosting.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.csproj.AssemblyReference.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.GeneratedMSBuildEditorConfig.editorconfig
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.AssemblyInfoInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.AssemblyInfo.cs
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.csproj.CoreCompileInputs.cache
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.sourcelink.json
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnA.3F5C92C5.Up2Date
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\refint\MCQDAOnAbp.Keycloak.DbMigrator.dll
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\MCQDAOnAbp.Keycloak.DbMigrator.pdb
+D:\MCQDAOnAbp\shared\MCQDAOnAbp.Keycloak.DbMigrator\obj\Debug\net8.0\ref\MCQDAOnAbp.Keycloak.DbMigrator.dll
