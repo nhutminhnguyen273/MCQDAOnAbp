@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Keycloak.Net.Models.Roles;
+using Keycloak.Net.Models.Users;
+using MCQDAOnAbp.IdentityService.Keycloak.Service;
 
 namespace MCQDAOnAbp.IdentityService;
 
@@ -6,8 +9,13 @@ public class IdentityServiceApplicationAutoMapperProfile : Profile
 {
     public IdentityServiceApplicationAutoMapperProfile()
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        CreateMap<User, CachedKeycloakUser>().ReverseMap();
+        CreateMap<UserAccess, CachedUserAccess>().ReverseMap();
+        CreateMap<UserConsent, CachedUserConsent>().ReverseMap();
+        CreateMap<Credentials, CachedCredentials>().ReverseMap();
+        CreateMap<FederatedIdentity, CachedFederatedIdentity>();
+
+        CreateMap<Role, CachedKeycloakRole>().ReverseMap();
+        CreateMap<RoleComposite, CachedRoleComposite>().ReverseMap();
     }
 }

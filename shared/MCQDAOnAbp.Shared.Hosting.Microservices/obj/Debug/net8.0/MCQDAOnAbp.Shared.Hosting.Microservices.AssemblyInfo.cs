@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MCQDAOnAbp.Shared.Hosting.Microservices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64f6ee560331f90177e62df6ea38d85d21a3e238")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+525c0e492e8b9b9e2064b494b93a65c34873d62e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MCQDAOnAbp.Shared.Hosting.Microservices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MCQDAOnAbp.Shared.Hosting.Microservices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

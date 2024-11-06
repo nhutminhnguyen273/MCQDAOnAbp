@@ -1,31 +1,13 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Uow;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
-using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
-using Volo.Abp.FeatureManagement.EntityFrameworkCore;
-using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace MCQDAOnAbp.FacultyService.EntityFrameworkCore;
 
 [DependsOn(
     typeof(FacultyServiceDomainModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpOpenIddictEntityFrameworkCoreModule),
-    typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-    typeof(AbpSettingManagementEntityFrameworkCoreModule),
-    typeof(AbpEntityFrameworkCoreSqlServerModule),
-    typeof(AbpBackgroundJobsEntityFrameworkCoreModule),
-    typeof(AbpAuditLoggingEntityFrameworkCoreModule),
-    typeof(AbpTenantManagementEntityFrameworkCoreModule),
-    typeof(AbpFeatureManagementEntityFrameworkCoreModule)
+    typeof(AbpEntityFrameworkCoreSqlServerModule)
     )]
 public class FacultyServiceEntityFrameworkCoreModule : AbpModule
 {
@@ -38,16 +20,17 @@ public class FacultyServiceEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<FacultyServiceDbContext>(options =>
         {
-                /* Remove "includeAllEntities: true" to create
-                 * default repositories only for aggregate roots */
+            options.ReplaceDbContext<FacultyServiceDbContext>();
+
             options.AddDefaultRepositories(includeAllEntities: true);
         });
 
         Configure<AbpDbContextOptions>(options =>
         {
-                /* The main point to change your DBMS.
-                 * See also FacultyServiceMigrationsDbContextFactory for EF Core tooling. */
-            options.UseSqlServer();
+            options.Configure<FacultyServiceDbContext>(c =>
+            {
+                c.UseSqlServer(b => { b.MigrationsHistoryTable("__FacultyService_Migrations"); });
+            });
         });
 
     }

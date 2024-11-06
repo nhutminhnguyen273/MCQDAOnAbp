@@ -10,12 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Keycloak.Net.Core" Version="1.0.30" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.ServiceDefaults\MCQDAOnAbp.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.Shared.Hosting.Gateways\MCQDAOnAbp.Shared.Hosting.Gateways.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.Shared.Hosting.Microservices\MCQDAOnAbp.Shared.Hosting.Microservices.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.IdentityService.Application\MCQDAOnAbp.IdentityService.Application.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.IdentityService.EntityFrameworkCore\MCQDAOnAbp.IdentityService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\MCQDAOnAbp.IdentityService.HttpApi\MCQDAOnAbp.IdentityService.HttpApi.csproj" />
   </ItemGroup>
 
 </Project>

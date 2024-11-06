@@ -113,8 +113,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.FacultyService.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.FacultyService.Application.Contracts", "services\FacultyService\src\MCQDAOnAbp.FacultyService.Application.Contracts\MCQDAOnAbp.FacultyService.Application.Contracts.csproj", "{36C2992D-4CB0-4E2F-A92B-6902BFF8081A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.FacultyService.DbMigrator", "services\FacultyService\src\MCQDAOnAbp.FacultyService.DbMigrator\MCQDAOnAbp.FacultyService.DbMigrator.csproj", "{3AE1D497-EF72-4006-AC2F-523DF92861F3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.FacultyService.Domain", "services\FacultyService\src\MCQDAOnAbp.FacultyService.Domain\MCQDAOnAbp.FacultyService.Domain.csproj", "{CF9062E7-CDCE-48E8-B3D4-8BFBBFB984C9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.FacultyService.Domain.Shared", "services\FacultyService\src\MCQDAOnAbp.FacultyService.Domain.Shared\MCQDAOnAbp.FacultyService.Domain.Shared.csproj", "{0D8F71C2-83C8-4305-9F6D-49D8EB903E28}"
@@ -245,25 +243,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{E5BE0E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateways", "gateways", "{D993C25B-3120-4586-BF0E-99CD1F819219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Web", "apps\MCQDAOnAbp.Web\MCQDAOnAbp.Web.csproj", "{F52C3973-C2FF-45A4-BD4E-F146065D8AF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Web", "apps\MCQDAOnAbp.Web\MCQDAOnAbp.Web.csproj", "{F52C3973-C2FF-45A4-BD4E-F146065D8AF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Gateway", "gateways\MCQDAOnAbp.Gateway\MCQDAOnAbp.Gateway.csproj", "{0F83C475-7E29-4CFE-BF70-59701307B76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Gateway", "gateways\MCQDAOnAbp.Gateway\MCQDAOnAbp.Gateway.csproj", "{0F83C475-7E29-4CFE-BF70-59701307B76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Shared.Hosting", "shared\MCQDAOnAbp.Shared.Hosting\MCQDAOnAbp.Shared.Hosting.csproj", "{1B5BEE15-C7F0-4952-AAE8-F75DBD6630F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Shared.Hosting", "shared\MCQDAOnAbp.Shared.Hosting\MCQDAOnAbp.Shared.Hosting.csproj", "{1B5BEE15-C7F0-4952-AAE8-F75DBD6630F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Shared.Hosting.AspNetCore", "shared\MCQDAOnAbp.Shared.Hosting.AspNetCore\MCQDAOnAbp.Shared.Hosting.AspNetCore.csproj", "{6082221C-857D-4E81-9EFA-F70D2B738734}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Shared.Hosting.AspNetCore", "shared\MCQDAOnAbp.Shared.Hosting.AspNetCore\MCQDAOnAbp.Shared.Hosting.AspNetCore.csproj", "{6082221C-857D-4E81-9EFA-F70D2B738734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Shared.Hosting.Gateways", "shared\MCQDAOnAbp.Shared.Hosting.Gateways\MCQDAOnAbp.Shared.Hosting.Gateways.csproj", "{C1C15C88-9A52-4474-8373-759C55A830B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Shared.Hosting.Gateways", "shared\MCQDAOnAbp.Shared.Hosting.Gateways\MCQDAOnAbp.Shared.Hosting.Gateways.csproj", "{C1C15C88-9A52-4474-8373-759C55A830B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Keycloak.DbMigrator", "shared\MCQDAOnAbp.Keycloak.DbMigrator\MCQDAOnAbp.Keycloak.DbMigrator.csproj", "{9E8305F9-63EF-4D5D-95B4-8EF90102D092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Keycloak.DbMigrator", "shared\MCQDAOnAbp.Keycloak.DbMigrator\MCQDAOnAbp.Keycloak.DbMigrator.csproj", "{9E8305F9-63EF-4D5D-95B4-8EF90102D092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Shared.Localization", "shared\MCQDAOnAbp.Shared.Localization\MCQDAOnAbp.Shared.Localization.csproj", "{7DC89B35-A8C6-404A-B340-7921D7AC2CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Shared.Localization", "shared\MCQDAOnAbp.Shared.Localization\MCQDAOnAbp.Shared.Localization.csproj", "{7DC89B35-A8C6-404A-B340-7921D7AC2CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.Shared.Hosting.Microservices", "shared\MCQDAOnAbp.Shared.Hosting.Microservices\MCQDAOnAbp.Shared.Hosting.Microservices.csproj", "{2A53A967-8849-41EF-8F51-D76C77AAF484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.Shared.Hosting.Microservices", "shared\MCQDAOnAbp.Shared.Hosting.Microservices\MCQDAOnAbp.Shared.Hosting.Microservices.csproj", "{2A53A967-8849-41EF-8F51-D76C77AAF484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.ServiceDefaults", "shared\MCQDAOnAbp.ServiceDefaults\MCQDAOnAbp.ServiceDefaults.csproj", "{FCA30CE3-84B2-4DF9-A25F-37731718BC8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.ServiceDefaults", "shared\MCQDAOnAbp.ServiceDefaults\MCQDAOnAbp.ServiceDefaults.csproj", "{FCA30CE3-84B2-4DF9-A25F-37731718BC8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCQDAOnAbp.IdentityService.HttpApi.Host", "services\IdentityService\src\MCQDAOnAbp.IdentityService.HttpApi.Host\MCQDAOnAbp.IdentityService.HttpApi.Host.csproj", "{16C2D468-27EF-45D1-8AF0-CE870DF99D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCQDAOnAbp.IdentityService.HttpApi.Host", "services\IdentityService\src\MCQDAOnAbp.IdentityService.HttpApi.Host\MCQDAOnAbp.IdentityService.HttpApi.Host.csproj", "{16C2D468-27EF-45D1-8AF0-CE870DF99D83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -617,14 +615,6 @@ Global
 		{36C2992D-4CB0-4E2F-A92B-6902BFF8081A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36C2992D-4CB0-4E2F-A92B-6902BFF8081A}.Release|x64.ActiveCfg = Release|Any CPU
 		{36C2992D-4CB0-4E2F-A92B-6902BFF8081A}.Release|x64.Build.0 = Release|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Debug|x64.Build.0 = Debug|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Release|x64.ActiveCfg = Release|Any CPU
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3}.Release|x64.Build.0 = Release|Any CPU
 		{CF9062E7-CDCE-48E8-B3D4-8BFBBFB984C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF9062E7-CDCE-48E8-B3D4-8BFBBFB984C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF9062E7-CDCE-48E8-B3D4-8BFBBFB984C9}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1180,7 +1170,6 @@ Global
 		{DF20D392-0205-4F00-AE53-881C97F7192A} = {A8E9B595-4DF0-42B3-90C9-71FCAEC3D176}
 		{981247AD-76F7-4D24-A8C7-485A590E07A2} = {DF20D392-0205-4F00-AE53-881C97F7192A}
 		{36C2992D-4CB0-4E2F-A92B-6902BFF8081A} = {DF20D392-0205-4F00-AE53-881C97F7192A}
-		{3AE1D497-EF72-4006-AC2F-523DF92861F3} = {DF20D392-0205-4F00-AE53-881C97F7192A}
 		{CF9062E7-CDCE-48E8-B3D4-8BFBBFB984C9} = {DF20D392-0205-4F00-AE53-881C97F7192A}
 		{0D8F71C2-83C8-4305-9F6D-49D8EB903E28} = {DF20D392-0205-4F00-AE53-881C97F7192A}
 		{86452AD8-1CB9-4C36-8871-7AB358C5E120} = {DF20D392-0205-4F00-AE53-881C97F7192A}

@@ -6,8 +6,6 @@ using Microsoft.Extensions.Configuration;
 
 namespace MCQDAOnAbp.FacultyService.EntityFrameworkCore;
 
-/* This class is needed for EF Core console commands
- * (like Add-Migration and Update-Database commands) */
 public class FacultyServiceDbContextFactory : IDesignTimeDbContextFactory<FacultyServiceDbContext>
 {
     public FacultyServiceDbContext CreateDbContext(string[] args)
@@ -17,7 +15,10 @@ public class FacultyServiceDbContextFactory : IDesignTimeDbContextFactory<Facult
         var configuration = BuildConfiguration();
 
         var builder = new DbContextOptionsBuilder<FacultyServiceDbContext>()
-            .UseSqlServer(configuration.GetConnectionString("Default"));
+            .UseSqlServer(configuration.GetConnectionString(FacultyServiceDbProperties.ConnectionStringName), b =>
+            {
+                b.MigrationsHistoryTable("__FacultyService_Migrations");
+            });
 
         return new FacultyServiceDbContext(builder.Options);
     }
@@ -25,7 +26,7 @@ public class FacultyServiceDbContextFactory : IDesignTimeDbContextFactory<Facult
     private static IConfigurationRoot BuildConfiguration()
     {
         var builder = new ConfigurationBuilder()
-            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../MCQDAOnAbp.FacultyService.DbMigrator/"))
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), $"..{Path.DirectorySeparatorChar}MCQDAOnAbp.FacultyService.HttpApi.Host"))
             .AddJsonFile("appsettings.json", optional: false);
 
         return builder.Build();

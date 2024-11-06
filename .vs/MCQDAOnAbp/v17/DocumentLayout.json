@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\MCQDAOnAbp\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{4FDE077B-E188-4F5F-A58D-6BF4A0240346}|services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\MCQDAOnAbp.IdentityService.Application.csproj|d:\\mcqdaonabp\\services\\identityservice\\src\\mcqdaonabp.identityservice.application\\backgroundjobs\\roles\\keycloakroleupdatingjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FDE077B-E188-4F5F-A58D-6BF4A0240346}|services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\MCQDAOnAbp.IdentityService.Application.csproj|solutionrelative:services\\identityservice\\src\\mcqdaonabp.identityservice.application\\backgroundjobs\\roles\\keycloakroleupdatingjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KeycloakRoleUpdatingJob.cs",
-              "DocumentMoniker": "D:\\MCQDAOnAbp\\services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\BackgroundJobs\\Roles\\KeycloakRoleUpdatingJob.cs",
-              "RelativeDocumentMoniker": "services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\BackgroundJobs\\Roles\\KeycloakRoleUpdatingJob.cs",
-              "ToolTip": "D:\\MCQDAOnAbp\\services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\BackgroundJobs\\Roles\\KeycloakRoleUpdatingJob.cs",
-              "RelativeToolTip": "services\\IdentityService\\src\\MCQDAOnAbp.IdentityService.Application\\BackgroundJobs\\Roles\\KeycloakRoleUpdatingJob.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T14:04:07.579Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

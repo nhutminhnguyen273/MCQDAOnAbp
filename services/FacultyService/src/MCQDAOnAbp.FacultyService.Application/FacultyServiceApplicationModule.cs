@@ -1,23 +1,13 @@
-﻿using Volo.Abp.Account;
+﻿using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
 
 namespace MCQDAOnAbp.FacultyService;
 
 [DependsOn(
     typeof(FacultyServiceDomainModule),
-    typeof(AbpAccountApplicationModule),
     typeof(FacultyServiceApplicationContractsModule),
-    typeof(AbpIdentityApplicationModule),
-    typeof(AbpPermissionManagementApplicationModule),
-    typeof(AbpTenantManagementApplicationModule),
-    typeof(AbpFeatureManagementApplicationModule),
-    typeof(AbpSettingManagementApplicationModule)
+    typeof(AbpDddApplicationModule)
     )]
 public class FacultyServiceApplicationModule : AbpModule
 {
