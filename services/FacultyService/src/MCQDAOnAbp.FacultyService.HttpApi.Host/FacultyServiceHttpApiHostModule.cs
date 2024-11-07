@@ -1,177 +1,84 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MCQDAOnAbp.FacultyService.EntityFrameworkCore;
-using MCQDAOnAbp.FacultyService.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
-using Microsoft.OpenApi.Models;
-using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
-using Volo.Abp.Account;
-using Volo.Abp.Account.Web;
-using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
-using Volo.Abp.AspNetCore.Serilog;
-using Volo.Abp.Autofac;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
-using Volo.Abp.Security.Claims;
-using Volo.Abp.Swashbuckle;
-using Volo.Abp.UI.Navigation.Urls;
-using Volo.Abp.VirtualFileSystem;
+using MCQDAOnAbp.Shared.Hosting.Microservices;
+using MCQDAOnAbp.Shared.Hosting.AspNetCore;
+using System.Threading.Tasks;
+using Volo.Abp.AspNetCore.Mvc.AntiForgery;
+using Volo.Abp.Uow;
+using MCQDAOnAbp.FacultyService.Grpc;
+using MCQDAOnAbp.FacultyService.DbMigrations;
 
 namespace MCQDAOnAbp.FacultyService;
 
 [DependsOn(
     typeof(FacultyServiceHttpApiModule),
-    typeof(AbpAutofacModule),
-    typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(FacultyServiceApplicationModule),
     typeof(FacultyServiceEntityFrameworkCoreModule),
-    typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
-    typeof(AbpAccountWebOpenIddictModule),
-    typeof(AbpAspNetCoreSerilogModule),
-    typeof(AbpSwashbuckleModule)
+    typeof(MCQDAOnAbpSharedHostingMicroservicesModule)
 )]
 public class FacultyServiceHttpApiHostModule : AbpModule
 {
-    public override void PreConfigureServices(ServiceConfigurationContext context)
-    {
-        PreConfigure<OpenIddictBuilder>(builder =>
-        {
-            builder.AddValidation(options =>
-            {
-                options.AddAudiences("FacultyService");
-                options.UseLocalServer();
-                options.UseAspNetCore();
-            });
-        });
-    }
-
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var configuration = context.Services.GetConfiguration();
-        var hostingEnvironment = context.Services.GetHostingEnvironment();
 
-        ConfigureAuthentication(context);
-        ConfigureBundles();
-        ConfigureUrls(configuration);
-        ConfigureConventionalControllers();
-        ConfigureVirtualFileSystem(context);
-        ConfigureCors(context, configuration);
-        ConfigureSwaggerServices(context, configuration);
-    }
+        JwtBearerConfigurationHelper.Configure(context, "FacultyService");
 
-    private void ConfigureAuthentication(ServiceConfigurationContext context)
-    {
-        context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
-        context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
-        {
-            options.IsDynamicClaimsEnabled = true;
-        });
-    }
-
-    private void ConfigureBundles()
-    {
-        Configure<AbpBundlingOptions>(options =>
-        {
-            options.StyleBundles.Configure(
-                LeptonXLiteThemeBundles.Styles.Global,
-                bundle =>
-                {
-                    bundle.AddFiles("/global-styles.css");
-                }
+        SwaggerConfigurationHelper.ConfigureWithOidc(
+            context: context,
+            authority: configuration["AuthServer:Authority"]!,
+            scopes: ["FacultyService"],
+            discoveryEndpoint: configuration["AuthServer:MetadataAddress"],
+            apiTitle: "Faculty Service API"
             );
-        });
-    }
 
-    private void ConfigureUrls(IConfiguration configuration)
-    {
-        Configure<AppUrlOptions>(options =>
-        {
-            options.Applications["MVC"].RootUrl = configuration["App:SelfUrl"];
-            options.RedirectAllowedUrls.AddRange(configuration["App:RedirectAllowedUrls"]?.Split(',') ?? Array.Empty<string>());
-
-            options.Applications["Angular"].RootUrl = configuration["App:ClientUrl"];
-            options.Applications["Angular"].Urls[AccountUrlNames.PasswordReset] = "account/reset-password";
-        });
-    }
-
-    private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
-    {
-        var hostingEnvironment = context.Services.GetHostingEnvironment();
-
-        if (hostingEnvironment.IsDevelopment())
-        {
-            Configure<AbpVirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.ReplaceEmbeddedByPhysical<FacultyServiceDomainSharedModule>(
-                    Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}MCQDAOnAbp.FacultyService.Domain.Shared"));
-                options.FileSets.ReplaceEmbeddedByPhysical<FacultyServiceDomainModule>(
-                    Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}MCQDAOnAbp.FacultyService.Domain"));
-                options.FileSets.ReplaceEmbeddedByPhysical<FacultyServiceApplicationContractsModule>(
-                    Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}MCQDAOnAbp.FacultyService.Application.Contracts"));
-                options.FileSets.ReplaceEmbeddedByPhysical<FacultyServiceApplicationModule>(
-                    Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}MCQDAOnAbp.FacultyService.Application"));
-            });
-        }
-    }
-
-    private void ConfigureConventionalControllers()
-    {
-        Configure<AbpAspNetCoreMvcOptions>(options =>
-        {
-            options.ConventionalControllers.Create(typeof(FacultyServiceApplicationModule).Assembly);
-        });
-    }
-
-    private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)
-    {
-        context.Services.AddAbpSwaggerGenWithOAuth(
-            configuration["AuthServer:Authority"]!,
-            new Dictionary<string, string>
-            {
-                    {"FacultyService", "FacultyService API"}
-            },
-            options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "FacultyService API", Version = "v1" });
-                options.DocInclusionPredicate((docName, description) => true);
-                options.CustomSchemaIds(type => type.FullName);
-            });
-    }
-
-    private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
-    {
         context.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(builder =>
             {
                 builder
-                    .WithOrigins(configuration["App:CorsOrigins"]?
-                        .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                        .Select(o => o.RemovePostFix("/"))
-                        .ToArray() ?? Array.Empty<string>())
+                    .WithOrigins(
+                        configuration["App:CorsOrigins"]!
+                            .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                            .Select(o => o.Trim().RemovePostFix("/"))
+                            .ToArray()
+                    )
                     .WithAbpExposedHeaders()
                     .SetIsOriginAllowedToAllowWildcardSubdomains()
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
             });
+        });
+
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options.ConventionalControllers.Create(typeof(FacultyServiceApplicationModule).Assembly, opts =>
+            {
+                opts.RootPath = "faculty";
+                opts.RemoteServiceName = "Faculty";
+            });
+        });
+
+        Configure<AbpUnitOfWorkDefaultOptions>(options =>
+        {
+            options.TransactionBehavior = UnitOfWorkTransactionBehavior.Disabled;
+        });
+
+        Configure<AbpAntiForgeryOptions>(options => { options.AutoValidate = false; });
+        context.Services.AddGrpc(options =>
+        {
+            options.EnableDetailedErrors = true;
         });
     }
 
@@ -185,40 +92,34 @@ public class FacultyServiceHttpApiHostModule : AbpModule
             app.UseDeveloperExceptionPage();
         }
 
-        app.UseAbpRequestLocalization();
-
-        if (!env.IsDevelopment())
-        {
-            app.UseErrorPage();
-        }
-
         app.UseCorrelationId();
+        app.UseCors();
+        app.UseAbpRequestLocalization();
         app.UseStaticFiles();
         app.UseRouting();
-        app.UseCors();
         app.UseAuthentication();
-        app.UseAbpOpenIddictValidation();
-
-        if (MultiTenancyConsts.IsEnabled)
-        {
-            app.UseMultiTenancy();
-        }
-        app.UseUnitOfWork();
-        app.UseDynamicClaims();
+        app.UseAbpClaimsMap();
         app.UseAuthorization();
-
         app.UseSwagger();
-        app.UseAbpSwaggerUI(c =>
+        app.UseAbpSwaggerWithCustomScripUI(options =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "FacultyService API");
-
             var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
-            c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            c.OAuthScopes("FacultyService");
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Faculty Service API");
+            options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
-
-        app.UseAuditing();
         app.UseAbpSerilogEnrichers();
-        app.UseConfiguredEndpoints();
+        app.UseAuditing();
+        app.UseUnitOfWork();
+        app.UseConfiguredEndpoints(endpoints =>
+        {
+            endpoints.MapGrpcService<FacultyGrpService>();
+        });
+    }
+
+    public override async Task OnPostApplicationInitializationAsync(ApplicationInitializationContext context)
+    {
+        await context.ServiceProvider
+            .GetRequiredService<FacultyServiceDatabaseMigrationChecker>()
+            .CheckAndApplyDatabaseMigrationsAsync();
     }
 }

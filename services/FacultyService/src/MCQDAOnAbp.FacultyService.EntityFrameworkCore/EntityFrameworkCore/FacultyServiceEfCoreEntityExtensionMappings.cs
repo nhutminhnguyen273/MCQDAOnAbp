@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Volo.Abp.Identity;
-using Volo.Abp.ObjectExtending;
-using Volo.Abp.Threading;
+﻿using Volo.Abp.Threading;
 
 namespace MCQDAOnAbp.FacultyService.EntityFrameworkCore;
 
@@ -11,9 +8,6 @@ public static class FacultyServiceEfCoreEntityExtensionMappings
 
     public static void Configure()
     {
-        FacultyServiceGlobalFeatureConfigurator.Configure();
-        FacultyServiceModuleExtensionConfigurator.Configure();
-
         OneTimeRunner.Run(() =>
         {
                 /* You can configure extra properties for the

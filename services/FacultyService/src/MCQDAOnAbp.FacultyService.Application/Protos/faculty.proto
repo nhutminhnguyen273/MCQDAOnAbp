@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "MCQDAOnAbp.FacultyService.Grpc";
+
+package FacultyApi;
+
+service FacultyPublic {
+	rpc GetById(FacultyRequest) returns (FacultyResponse);
+}
+
+message FacultyRequest {
+	string id = 1;
+}
+
+message FacultyResponse {
+	string id = 1;
+	string code = 2;
+	string name = 3;
+}

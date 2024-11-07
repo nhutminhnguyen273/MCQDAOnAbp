@@ -1,56 +1,60 @@
 ﻿using System;
 using System.Threading.Tasks;
+using MCQDAOnAbp.ServiceDefaults;
+using MCQDAOnAbp.Shared.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Serilog.Events;
 
 namespace MCQDAOnAbp.FacultyService;
 
 public class Program
 {
-    public async static Task<int> Main(string[] args)
+    public static async Task<int> Main(string[] args)
     {
-        Log.Logger = new LoggerConfiguration()
-#if DEBUG
-            .MinimumLevel.Debug()
-#else
-            .MinimumLevel.Information()
-#endif
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
-            .Enrich.FromLogContext()
-            .WriteTo.Async(c => c.File("Logs/logs.txt"))
-            .WriteTo.Async(c => c.Console())
-            .CreateLogger();
+        var assemblyName = typeof(Program).Assembly.GetName().Name;
+
+        SerilogConfigurationHelper.Configure(assemblyName);
 
         try
         {
-            Log.Information("Starting MCQDAOnAbp.FacultyService.HttpApi.Host.");
+            Log.Information($"Starting {assemblyName}.");
             var builder = WebApplication.CreateBuilder(args);
-            builder.Host.AddAppSettingsSecretsJson()
+            builder.Host
                 .UseAutofac()
                 .UseSerilog();
+
+            builder.AddServiceDefaults();
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(5054, listenOptions =>
+                {
+                    listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
+                });
+                options.ListenAnyIP(8181, listenOptions =>
+                {
+                    listenOptions.Protocols = HttpProtocols.Http2;
+                });
+            });
+
             await builder.AddApplicationAsync<FacultyServiceHttpApiHostModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();
+
             return 0;
         }
         catch (Exception ex)
         {
-            if (ex is HostAbortedException)
-            {
-                throw;
-            }
-
-            Log.Fatal(ex, "Host terminated unexpectedly!");
+            Log.Fatal(ex, $"{assemblyName} terminated unexpectedly!");
             return 1;
         }
         finally
         {
-            Log.CloseAndFlush();
+            await Log.CloseAndFlushAsync();
         }
     }
 }

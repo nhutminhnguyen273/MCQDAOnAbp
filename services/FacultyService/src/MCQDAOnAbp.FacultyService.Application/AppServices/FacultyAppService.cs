@@ -1,4 +1,6 @@
 ﻿using MCQDAOnAbp.FacultyService.DTOs;
+using MCQDAOnAbp.FacultyService.Faculties.Queries;
+using MediatR;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
@@ -8,19 +10,26 @@ namespace MCQDAOnAbp.FacultyService.AppServices
 {
     public class FacultyAppService : ApplicationService, IFacultyAppService
     {
-        public Task<FacultyDto> GetAsync(Guid id)
+        private readonly IMediator _mediator;
+
+        public FacultyAppService(IMediator mediator)
         {
-            throw new NotImplementedException();
+            _mediator = mediator;
         }
 
-        public Task<ListResultDto<FacultyDto>> GetListAsync()
+        public async Task<FacultyDto> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(new GetFacultyQuery { Id = id });
         }
 
-        public Task<PagedResultDto<FacultyDto>> GetListPagedAsync(PagedAndSortedResultRequestDto input)
+        public async Task<ListResultDto<FacultyDto>> GetListAsync()
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(new GetListFacultiesQuery { });
+        }
+
+        public async Task<PagedResultDto<FacultyDto>> GetListPagedAsync(PagedAndSortedResultRequestDto input)
+        {
+            return await _mediator.Send(ObjectMapper.Map < PagedAndSortedResultRequestDto, GetListPagedFacultyQuery>(input));
         }
     }
 }

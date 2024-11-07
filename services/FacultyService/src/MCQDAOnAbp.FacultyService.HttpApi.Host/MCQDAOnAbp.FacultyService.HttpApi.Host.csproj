@@ -11,20 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
-    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="8.3.3" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="8.3.3" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="8.3.3" />
-    <PackageReference Include="Volo.Abp.Swashbuckle" Version="8.3.3" />
-    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="8.3.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="3.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.ServiceDefaults\MCQDAOnAbp.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\MCQDAOnAbp.Shared.Hosting.Microservices\MCQDAOnAbp.Shared.Hosting.Microservices.csproj" />
     <ProjectReference Include="..\MCQDAOnAbp.FacultyService.Application\MCQDAOnAbp.FacultyService.Application.csproj" />
     <ProjectReference Include="..\MCQDAOnAbp.FacultyService.EntityFrameworkCore\MCQDAOnAbp.FacultyService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\MCQDAOnAbp.FacultyService.HttpApi\MCQDAOnAbp.FacultyService.HttpApi.csproj" />
@@ -35,6 +23,10 @@
     <Content Remove="Logs\**" />
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.66.0" />
   </ItemGroup>
 
 </Project>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MCQDAOnAbp.Shared.Localization")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+525c0e492e8b9b9e2064b494b93a65c34873d62e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27a0c7772f4327915fe14eb18faee0ddc155b3f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MCQDAOnAbp.Shared.Localization")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MCQDAOnAbp.Shared.Localization")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
